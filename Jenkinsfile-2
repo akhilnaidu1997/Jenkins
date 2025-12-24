@@ -11,10 +11,8 @@ pipeline {
         stage('Build') {
             steps{
                 script {  //using scripts here is a hybrid approach
-                    sh """
                         echo 'Building.....'
                         echo 'Course is ${COURSE}'
-                    """
                 }
             }
         }
