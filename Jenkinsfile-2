@@ -12,8 +12,8 @@ pipeline {
             steps{
                 script {  //using scripts here is a hybrid approach
                     sh """
-                    Course is ${COURSE}
-                    Building.......
+                    echo 'Course is ${COURSE}'
+                    echo 'Building.......'
                     """
                 }
             }
