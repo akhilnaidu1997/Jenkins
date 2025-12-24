@@ -20,10 +20,10 @@ pipeline {
             }
         }
         stage('Test'){
+            environment {
+                Duration = '120hr'
+            }
             steps {
-                environment {
-                    Duration = '120hr'
-                }
                 script {
                     echo "Testing......"
                     sh """
