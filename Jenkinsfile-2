@@ -30,12 +30,16 @@ pipeline {
     post {
         always {
             echo 'I will say hello again regardless of build result'
+            cleanWs()
         }
         success {
             echo "I will run this if build is success"
         }
         failure {
             echo "I will run this if build is failed"
+        }
+        changed {
+            echo "I will run this if pipeline status is changed"
         }
     }
 }
