@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps{
-                script {
+                script {  //using scripts here is a hybrid approach
                     echo "Building....."
                 }
             }
@@ -25,6 +25,17 @@ pipeline {
                     echo "Deploying....."
                 }
             }
+        }
+    }
+    post {
+        always {
+            echo 'I will say hello again regardless of build result'
+        }
+        success {
+            echo "I will run this if build is success"
+        }
+        failure {
+            echo "I will run this if build is failed"
         }
     }
 }
