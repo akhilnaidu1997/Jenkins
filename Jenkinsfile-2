@@ -54,7 +54,7 @@ pipeline {
         success {
             echo "I will run this if build is success"
         }
-        failure {
+        aborted {
             withCredentials([string(credentialsId: 'slack-webhook-url', variable: 'SLACK_URL')]) {
                     sh """
                     curl -X POST -H 'Content-type: application/json' \
