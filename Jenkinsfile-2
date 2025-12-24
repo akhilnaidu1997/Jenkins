@@ -61,6 +61,7 @@ pipeline {
                     --data '{"text":"Build Failed ✅"}' \
                     $SLACK_URL
                     """
+            }
         }
         changed {
             echo "I will run this if pipeline status is changed"
