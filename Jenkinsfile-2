@@ -21,8 +21,14 @@ pipeline {
         }
         stage('Test'){
             steps {
+                environment {
+                    Duration = '120hr'
+                }
                 script {
                     echo "Testing......"
+                    sh """
+                        echo '${COURSE} duration is ${Duration}'
+                    """
                 }
             }
         }
