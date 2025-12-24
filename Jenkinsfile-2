@@ -8,7 +8,9 @@ pipeline {
         stage('Build') {
             steps{
                 script {  //using scripts here is a hybrid approach
-                    echo "Building....."
+                    sh """
+                        echo "Building....."
+                    """
                 }
             }
         }
