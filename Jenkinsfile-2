@@ -26,6 +26,7 @@ pipeline {
         stage('Build') {
             // This is build stage as example 
             steps{
+                when { triggeredBy 'SCMTrigger' }
                 script {  //using scripts here is a hybrid approach
                     sh """
                     echo 'Course is ${COURSE}'
