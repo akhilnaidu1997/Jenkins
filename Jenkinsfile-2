@@ -29,7 +29,6 @@ pipeline {
                     sh """
                     echo 'Course is ${COURSE}'
                     echo 'Building.......'
-                    // env
                     echo "Hello ${params.PERSON}"
                     echo "Biography: ${params.BIOGRAPHY}"
                     echo "Toggle: ${params.TOGGLE}"
@@ -56,9 +55,9 @@ pipeline {
             steps {
                 script {
                     echo "Deploying....."
-                    // sh """
-                    //     sleep 15
-                    // """
+                    sh """
+                        sleep 15
+                    """
                 }
             }
         }
