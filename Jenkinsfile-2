@@ -24,7 +24,7 @@ pipeline {
     }
     stages {
         stage('Build') {
-            // This is build stage as example
+            // This is build stage as example 
             steps{
                 script {  //using scripts here is a hybrid approach
                     sh """
@@ -39,7 +39,7 @@ pipeline {
                 }
             }
         }
-        stage('Test'){
+        stage('Test'){ // This is testing stage
             environment {
                 Duration = '120hr'
             }
