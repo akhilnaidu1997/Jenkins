@@ -52,7 +52,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy'){
+        stage('Deploy'){ // This is a deploy stage for practice
             steps {
                 script {
                     echo "Deploying....."
