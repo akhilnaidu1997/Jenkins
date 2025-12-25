@@ -23,10 +23,9 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
     stages {
-        stage('Build') {
-            // This is build stage as example 
+        stage('Build') { // This is build stage as example
+            when { triggeredBy 'SCMTrigger' } 
             steps{
-                when { triggeredBy 'SCMTrigger' }
                 script {  //using scripts here is a hybrid approach
                     sh """
                     echo 'Course is ${COURSE}'
