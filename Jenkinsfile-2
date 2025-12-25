@@ -24,7 +24,7 @@ pipeline {
     }
     stages {
         stage('Build') { // This is build stage as example
-            when { triggeredBy 'SCMTrigger' } 
+            when { branch 'main' } 
             steps{
                 script {  //using scripts here is a hybrid approach
                     sh """
