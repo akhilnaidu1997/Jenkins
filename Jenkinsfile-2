@@ -39,7 +39,7 @@ pipeline {
                 }
             }
         }
-        stage('Test'){ 
+        stage('Test'){ // This is a test stage
             environment {
                 Duration = '120hr'
             }
