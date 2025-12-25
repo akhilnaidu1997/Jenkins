@@ -5,7 +5,7 @@ pipeline {
         }
     }
     options {
-        timeout(time: 10, unit: 'SECONDS') 
+        // timeout(time: 10, unit: 'SECONDS') 
         disableConcurrentBuilds()
     }
     environment {
@@ -55,9 +55,9 @@ pipeline {
             steps {
                 script {
                     echo "Deploying....."
-                    sh """
-                        sleep 15
-                    """
+                    // sh """
+                    //     sleep 15
+                    // """
                 }
             }
         }
@@ -72,11 +72,11 @@ pipeline {
         }
         aborted {
             withCredentials([string(credentialsId: 'slack-webhook-url', variable: 'SLACK_URL')]) {
-                    sh """
+                    sh '''
                     curl -X POST -H 'Content-type: application/json' \
                     --data '{"text":"Build Failed ✅"}' \
                     $SLACK_URL
-                    """
+                    '''
             }
         }
         changed {
